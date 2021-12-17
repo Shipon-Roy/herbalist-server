@@ -19,7 +19,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run () {
     try{
         await client.connect();
-        const database = client.db('niche_product');
+        const database = client.db('herbalist');
         const productsCollection = database.collection('products');
         const orderCollection = database.collection('order');
         const reviewCollection = database.collection('review');
@@ -144,8 +144,8 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res)  => {
-    res.send('Niche Products Server Run');
+    res.send('Herbalist Server Run');
 })
 app.listen(port, () => {
-    console.log('Niche product server at port', port)
+    console.log('Herbalist server at port', port)
 })
